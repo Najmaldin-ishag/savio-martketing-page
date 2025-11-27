@@ -1,12 +1,14 @@
 @import "tailwindcss";
 
 :root {
+  --savio-gold: #ffda1f;
+
   --background: #0a0a0a;
   --foreground: #ffffff;
-  --savio-orange: #ff6b4a;
-  --savio-orange-light: #ff8b6f;
-  --savio-orange-dark: #e86e4a;
-  --savio-coral: #ffa07a;
+  --savio-orange: #f68128;
+  --savio-orange-light: #ff8e4d;
+  --savio-orange-dark: #ff7424;
+  --savio-coral: #ff8f4c;
   --savio-dark: #0a0a0a;
   --savio-dark-light: #1a1a1a;
   --savio-dark-lighter: #2a2a2a;
