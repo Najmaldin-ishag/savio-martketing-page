@@ -1,26 +1,72 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --savio-orange: #ff6b4a;
+  --savio-orange-light: #ff8b6f;
+  --savio-orange-dark: #e86e4a;
+  --savio-coral: #ffa07a;
+  --savio-dark: #0a0a0a;
+  --savio-dark-light: #1a1a1a;
+  --savio-dark-lighter: #2a2a2a;
+  --savio-text: #ffffff;
+  --savio-text-muted: #a0a0a0;
+  --savio-text-dim: #6b6b6b;
 }
 
-@theme inline {
+@theme {
   --color-background: var(--background);
+  --color-foreground-grey: #a29a97;
   --color-foreground: var(--foreground);
+  --color-savio-orange: var(--savio-orange);
+  --color-savio-orange-light: var(--savio-orange-light);
+  --color-savio-orange-dark: var(--savio-orange-dark);
+  --color-savio-coral: var(--savio-coral);
+  --color-savio-dark: var(--savio-dark);
+  --color-savio-dark-light: var(--savio-dark-light);
+  --color-savio-dark-lighter: var(--savio-dark-lighter);
+  --color-savio-text: var(--savio-text);
+  --color-savio-text-muted: var(--savio-text-muted);
+  --color-savio-text-dim: var(--savio-text-dim);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--savio-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--savio-dark-lighter);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--savio-text-muted);
+}
+
+/* #0b0501 - A deep, near-black for backgrounds.
+
+#211915 - A dark, warm grey for secondary backgrounds or panels.
+
+#583420 - A muted mid-tone brown, suitable for borders or inactive elements.
+
+#cf6a23 - A vibrant orange for primary buttons, accents, and highlights.
+
+#a29a97 - A light grey for text, icons, and secondary buttons. */
