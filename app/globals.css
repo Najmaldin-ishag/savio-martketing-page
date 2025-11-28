@@ -19,6 +19,7 @@
 
 @theme {
   --color-background: var(--background);
+  --color-savio-gold: var(--savio-gold);
   --color-foreground-grey: #a29a97;
   --color-foreground: var(--foreground);
   --color-savio-orange: var(--savio-orange);

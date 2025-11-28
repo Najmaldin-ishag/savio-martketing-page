@@ -38,10 +38,13 @@ export function Waitlist() {
   };
 
   return (
-    <Section id="waitlist" className="bg-savio-dark-light relative overflow-hidden">
+    <Section
+      id="waitlist"
+      className="bg-savio-dark-light relative overflow-hidden"
+    >
       {/* Background decoration */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-savio-orange/5 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-savio-orange/4 rounded-full blur-3xl" />
       </div>
 
       <div className="relative max-w-3xl mx-auto text-center">
@@ -60,11 +63,11 @@ export function Waitlist() {
           </span>
 
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-savio-text mb-4">
-            Join Our{" "}
-            <span className="text-savio-orange">Waitlist</span>
+            Join Our <span className="text-savio-orange">Waitlist</span>
           </h2>
           <p className="text-savio-text-muted text-lg md:text-xl mb-10 max-w-xl mx-auto">
-            Be the first to experience AI-powered financial growth. Get early access and exclusive launch benefits.
+            Be the first to experience AI-powered financial growth. Get early
+            access and exclusive launch benefits.
           </p>
         </motion.div>
 
@@ -87,7 +90,8 @@ export function Waitlist() {
                 You&apos;re on the list!
               </h3>
               <p className="text-savio-text-muted">
-                We&apos;ll notify you when Savio is ready for you. Check your inbox for a confirmation email.
+                We&apos;ll notify you when Savio is ready for you. Check your
+                inbox for a confirmation email.
               </p>
             </motion.div>
           ) : (
@@ -106,9 +110,10 @@ export function Waitlist() {
               </div>
               <Button
                 type="submit"
-                size="lg"
+                size="md"
                 disabled={isLoading}
-                className="h-14 px-8"
+                className="h-14 cursor-pointer px-8"
+                variant="cta"
               >
                 {isLoading ? (
                   <>
