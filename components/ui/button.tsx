@@ -5,7 +5,7 @@ import { motion } from "motion/react";
 import { forwardRef, type ButtonHTMLAttributes } from "react";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "ghost";
+  variant?: "primary" | "secondary" | "outline" | "ghost" | "cta";
   size?: "sm" | "md" | "lg";
   asChild?: boolean;
 }

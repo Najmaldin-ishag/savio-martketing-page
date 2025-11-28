@@ -1,6 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 interface LogoProps {
   className?: string;
@@ -29,7 +30,8 @@ export function SavioLogo({ className, size = 32 }: LogoProps) {
 export function SavioLogoFull({ className }: { className?: string }) {
   return (
     <div className={cn("flex items-center gap-2", className)}>
-      <SavioLogo size={28} />
+      {/* <SavioLogo size={28} /> */}
+      <Image src="/imgs/icon.png" alt="savio icon" width={28} height={28} />
       <span className="text-xl font-semibold text-savio-text">Savio</span>
     </div>
   );
