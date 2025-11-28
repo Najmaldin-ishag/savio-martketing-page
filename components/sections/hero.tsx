@@ -5,7 +5,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Sparkles } from "@/components/icons/star";
-import { GradientTriangle, CoralStar } from "@/components/icons/triangle";
+// import { GradientTriangle, CoralStar } from "@/components/icons/triangle";
 import Image from "next/image";
 
 export function Hero() {
@@ -48,6 +48,13 @@ export function Hero() {
           ))}
         </div>
       </div> */}
+      <Image
+        src="/imgs/frame.png"
+        className="absolute aspect-auto top-50 -left-10 md:left-20"
+        width={100}
+        height={100}
+        alt="frame"
+      />
 
       {/* Decorative elements */}
       {/* <GradientTriangle
@@ -76,15 +83,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-4xl md:text-5xl lg:text-7xl font-bold text-savio-text leading-tight mb-6"
+          className="text-xl md:text-xl lg:text-5xl font-bold text-savio-text leading-tight mt-4 mb-6 text-center"
         >
           Take Control Of Your
           <br />
           Financial{" "}
-          <span className="italic font-serif text-savio-text">Growth</span>
+          <span className="italic font-serif  text-savio-text">Growth</span>
           <motion.span
             className="inline-block ml-2"
-            animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
+            animate={{ rotate: [0, 10, -10, 0], scale: [0.5, 0.7, 0.5] }}
             transition={{ duration: 2, repeat: Infinity }}
           >
             ✨
@@ -109,10 +116,18 @@ export function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <Button size="lg" onClick={() => scrollToSection("waitlist")}>
+          <Button
+            size="md"
+            className="px-8 py-3 cursor-pointer"
+            onClick={() => scrollToSection("waitlist")}
+          >
             Start Saving Today
           </Button>
-          <Button variant="outline" size="lg">
+          <Button
+            variant="outline"
+            size="md"
+            className="px-8 py-3 cursor-pointer"
+          >
             Watch Demo
           </Button>
         </motion.div>
@@ -130,6 +145,13 @@ export function Hero() {
           <div className="absolute -inset-4 bg-gradient-to-r from-savio-orange/20 via-savio-orange/10 to-savio-coral/20 rounded-3xl blur-2xl" />
 
           {/* Dashboard container with image */}
+          <Image
+            src="/imgs/mask.png"
+            className="absolute aspect-auto -top-20  -z-10 right-0 "
+            width={100}
+            height={100}
+            alt="frame"
+          />
           <Image
             src="/imgs/Dashboard.png"
             alt="Savio Dashboard"
