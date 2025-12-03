@@ -4,7 +4,21 @@ import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
 import { forwardRef, type HTMLAttributes } from "react";
 
-interface SectionProps extends HTMLAttributes<HTMLElement> {
+type SectionHTMLAttributes = Omit<
+  HTMLAttributes<HTMLElement>,
+  | "onDrag"
+  | "onDragStart"
+  | "onDragEnd"
+  | "onDragEnter"
+  | "onDragExit"
+  | "onDragLeave"
+  | "onDragOver"
+  | "onAnimationStart"
+  | "onAnimationEnd"
+  | "onAnimationIteration"
+>;
+
+interface SectionProps extends SectionHTMLAttributes {
   animate?: boolean;
 }
 
@@ -27,7 +41,11 @@ const Section = forwardRef<HTMLElement, SectionProps>(
     }
 
     return (
-      <section ref={ref} className={cn("py-20 px-4 md:px-8", className)} {...props}>
+      <section
+        ref={ref}
+        className={cn("py-20 px-4 md:px-8", className)}
+        {...props}
+      >
         {children}
       </section>
     );
@@ -36,40 +54,43 @@ const Section = forwardRef<HTMLElement, SectionProps>(
 
 Section.displayName = "Section";
 
-const SectionHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
-  ({ className, ...props }, ref) => (
-    <div
-      ref={ref}
-      className={cn("text-center max-w-3xl mx-auto mb-16", className)}
-      {...props}
-    />
-  )
-);
+const SectionHeader = forwardRef<
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-center max-w-3xl mx-auto mb-16", className)}
+    {...props}
+  />
+));
 SectionHeader.displayName = "SectionHeader";
 
-const SectionTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement>>(
-  ({ className, ...props }, ref) => (
-    <h2
-      ref={ref}
-      className={cn(
-        "text-3xl md:text-4xl lg:text-5xl font-bold text-savio-text mb-4",
-        className
-      )}
-      {...props}
-    />
-  )
-);
+const SectionTitle = forwardRef<
+  HTMLHeadingElement,
+  HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h2
+    ref={ref}
+    className={cn(
+      "text-3xl md:text-4xl lg:text-5xl font-bold text-savio-text mb-4",
+      className
+    )}
+    {...props}
+  />
+));
 SectionTitle.displayName = "SectionTitle";
 
-const SectionDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...props }, ref) => (
-    <p
-      ref={ref}
-      className={cn("text-savio-text-muted text-lg md:text-xl", className)}
-      {...props}
-    />
-  )
-);
+const SectionDescription = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-savio-text-muted text-lg md:text-xl", className)}
+    {...props}
+  />
+));
 SectionDescription.displayName = "SectionDescription";
 
 export { Section, SectionHeader, SectionTitle, SectionDescription };

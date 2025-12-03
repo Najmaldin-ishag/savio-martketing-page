@@ -10,7 +10,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
 
 const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ className, hover = true, children, ...props }, ref) => {
-    const Component = hover ? motion.div : "div";
+    const Component = hover ? (motion.div as React.ElementType) : "div";
 
     const hoverProps = hover
       ? {
@@ -24,7 +24,8 @@ const Card = forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         className={cn(
           "rounded-2xl bg-savio-dark-light border border-savio-dark-lighter p-6 transition-shadow duration-300",
-          hover && "hover:shadow-xl hover:shadow-savio-orange/5 hover:border-savio-dark-lighter/80",
+          hover &&
+            "hover:shadow-xl hover:shadow-savio-orange/5 hover:border-savio-dark-lighter/80",
           className
         )}
         {...hoverProps}
@@ -45,26 +46,28 @@ const CardHeader = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
 );
 CardHeader.displayName = "CardHeader";
 
-const CardTitle = forwardRef<HTMLHeadingElement, HTMLAttributes<HTMLHeadingElement>>(
-  ({ className, ...props }, ref) => (
-    <h3
-      ref={ref}
-      className={cn("text-xl font-semibold text-savio-text", className)}
-      {...props}
-    />
-  )
-);
+const CardTitle = forwardRef<
+  HTMLHeadingElement,
+  HTMLAttributes<HTMLHeadingElement>
+>(({ className, ...props }, ref) => (
+  <h3
+    ref={ref}
+    className={cn("text-xl font-semibold text-savio-text", className)}
+    {...props}
+  />
+));
 CardTitle.displayName = "CardTitle";
 
-const CardDescription = forwardRef<HTMLParagraphElement, HTMLAttributes<HTMLParagraphElement>>(
-  ({ className, ...props }, ref) => (
-    <p
-      ref={ref}
-      className={cn("text-savio-text-muted text-sm mt-2", className)}
-      {...props}
-    />
-  )
-);
+const CardDescription = forwardRef<
+  HTMLParagraphElement,
+  HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => (
+  <p
+    ref={ref}
+    className={cn("text-savio-text-muted text-sm mt-2", className)}
+    {...props}
+  />
+));
 CardDescription.displayName = "CardDescription";
 
 const CardContent = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
